@@ -1,0 +1,41 @@
+﻿---
+ID: "800a57f2-73cf-4a5b-a287-d47651675d22"
+Parent: "40313feb-8d8b-403d-beb7-9acb64302283"
+Template: "40313feb-8d8b-403d-beb7-9acb64302283"
+Path: /sitecore/templates/CMP/Image Field Mapping/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{40313FEB-8D8B-403D-BEB7-9ACB64302283}"
+- ID: "da990633-7884-44a2-8638-94389c5cbfec"
+  Hint: CMP Field Name
+  Value: CmpContentToLinkedAsset
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190205T133746Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ff7003d0-3c19-4fe0-8164-c34d19bb2807"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210209T122415Z
+    - ID: "ebe8b49a-d744-4a66-9220-928b5b89a419"
+      Hint: AssetIndex
+      Value: 1

@@ -59,6 +59,8 @@ namespace CMP.Connector
                 public const string MediaID = "Media ID";
                 public const string Transform = "Transform";
                 public const string Rendition = "Rendition";
+
+                public const string IconField = "__Icon";
             }
         }
 

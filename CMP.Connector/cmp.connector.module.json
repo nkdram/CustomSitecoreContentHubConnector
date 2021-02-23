@@ -1,0 +1,35 @@
+{
+  "namespace": "CMP.CustomConnector",
+  "items": {
+    "includes": [
+      {
+        "name": "templates-imagefield",
+        "path": "/sitecore/templates/CMP/Image Field Mapping"
+      },
+      {
+        "name": "templates-entitymapping",
+        "path": "/sitecore/templates/CMP/Entity Mapping"
+      },
+      {
+        "name": "cmp-config-asset",
+        "path": "/sitecore/system/Modules/CMP/Config/Asset"
+      },
+      {
+        "name": "cmp-config-blog",
+        "path": "/sitecore/system/Modules/CMP/Config/Blog"
+      },
+      {
+        "name": "entity-mapping-rule-tags",
+        "path": "/sitecore/system/Settings/Rules/Definitions/Tags/CMP Entity Mapping Rules"
+      },
+      {
+        "name": "entity-mapping-rule-element",
+        "path": "/sitecore/system/Settings/Rules/Definitions/Elements/CMP Entity Mapping Rules"
+      },
+      {
+        "name": "entity-mapping-rules",
+        "path": "/sitecore/system/Settings/Rules/CMP Entity Mapping Rules"
+      }
+    ]
+  }
+}

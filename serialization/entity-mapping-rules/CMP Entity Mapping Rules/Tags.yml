@@ -1,0 +1,36 @@
+﻿---
+ID: "791bf50f-5a6e-47a2-b8a2-231adbf70f8d"
+Parent: "8345d6a7-7edb-4b05-99ff-aa6cd9c6d075"
+Template: "96c8e5dd-63c3-496b-a97c-a3e37e1dacba"
+Path: /sitecore/system/Settings/Rules/CMP Entity Mapping Rules/Tags
+BranchID: "bdc41fdd-a3ac-4b69-a0ba-471c425cb083"
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{89AE4677-9391-4267-AB7A-EE3B063A1BE0}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210219T152950Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "55c5c43e-9881-4753-86f9-0e068b3c1122"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210219T152950Z

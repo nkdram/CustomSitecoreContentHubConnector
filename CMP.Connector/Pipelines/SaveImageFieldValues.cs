@@ -18,6 +18,8 @@ using CMP.Connector.Models;
 using Stylelabs.M.Framework.Essentials.LoadConfigurations;
 using CMP.Connector.Helpers;
 using Sitecore.Connector.CMP;
+using CMP.Connector.Pipelines.Media;
+using Sitecore.Configuration;
 
 namespace CMP.Connector.Pipelines
 {
@@ -45,6 +47,11 @@ namespace CMP.Connector.Pipelines
                         .Select(s => s.Split('='))
                         .ToDictionary(s => s.First(), s => s.Last());
             }
+        }
+
+        private string IconTransform
+        {
+            get { return Settings.GetSetting("ContentHub.IconTransform", "scIcon"); }
         }
 
         public SaveImageFieldValues(BaseFactory factory, BaseLog logger, IWebMClient mClient, CmpSettings settings) : base(logger, settings)
@@ -85,7 +92,8 @@ namespace CMP.Connector.Pipelines
 
                             if (publicLink != null && !string.IsNullOrEmpty(publicLink.URL))
                             {
-                                var imgElement = GetContentHubDamImageElement(contentHubHost, publicLink);
+                                //TODO : Providing empty URL on purpose - if not media id is not getting resolved
+                                var imgElement = GetContentHubDamImageElement("", publicLink);
                                 args.Item.Fields[Sitecore.Connector.CMP.Constants.FieldMappingSitecoreFieldNameFieldId].Value = imgElement;
                                 //Having it static
                                 if (!publicLink.URL.StartsWith("http"))
@@ -94,6 +102,10 @@ namespace CMP.Connector.Pipelines
                                 var query = HttpUtility.ParseQueryString(uri.Query);
                                 args.Item.Fields[Constants.DAMImageTemplate.Fields.MediaID].Value = uri.Path.Split("/".ToCharArray()).Last();
                                 args.Item.Fields[Constants.DAMImageTemplate.Fields.VersionID].Value = query["v"];
+
+                                var mediaUrl = Sitecore.Resources.Media.MediaManager.GetMediaUrl(new MediaItem(args.Item));
+                                // Generate Icon Url and set it 
+                                args.Item.Fields[Constants.DAMImageTemplate.Fields.IconField].Value = GenerateIconUrl(mediaUrl, new Dictionary<string, string> { { "mid", uri.Path.Split("/".ToCharArray()).Last() }, { "v", query["v"] }, { "t", IconTransform } });
                             }
                         }
                     }
@@ -120,6 +132,33 @@ namespace CMP.Connector.Pipelines
         private string GetContentHubDamImageElement(string host, PublicLinkData publicLink)
         {
             return $"<image stylelabs-content-id=\"{publicLink.AssetId}\" thumbnailsrc=\"{host}/api/gateway/{publicLink.AssetId}/thumbnail\" src=\"{publicLink.URL}\" mediaid =\"\" stylelabs-content-type=\"{publicLink.ContentType.ToString()}\" alt=\"{publicLink.AltText}\" height=\"{publicLink.Height ?? ""}\" width=\"{publicLink.Width ?? ""}\" />";
+        }
+
+        private string GenerateIconUrl(string Url, Dictionary<string, string> Values)
+        {
+            string longurl = Url;
+            if (!longurl.StartsWith("http"))
+                longurl = (!string.IsNullOrEmpty(Sitecore.Context.Site?.HostName) ? Sitecore.Context.Site.HostName : "http://sitename/") + Url;
+
+            var uriBuilder = new UriBuilder(longurl);
+            var query = HttpUtility.ParseQueryString(uriBuilder.Query);
+            bool isTransformApplied = false;
+            foreach (var key in Values.Keys)
+            {
+                if (!string.IsNullOrEmpty(Values[key]))
+                {
+                    isTransformApplied = !isTransformApplied ? key == "t" : isTransformApplied;
+                    query[key] = Values[key];
+                }
+            }
+            if (isTransformApplied)
+            {
+                query.Remove("w");
+                query.Remove("h");
+            }
+
+            uriBuilder.Query = query.ToString();
+            return Url.Split(new Char[] { '?' })[0] + uriBuilder.Query;
         }
 
     }

@@ -1,0 +1,125 @@
+﻿---
+ID: "983bdcd9-b4f3-464a-994d-ae872cef834c"
+Parent: "f8843bf7-a31a-4f71-8900-abd56b8fe34c"
+Template: "e022206a-3482-46c2-8ddf-2f1c2c6c7b69"
+Path: /sitecore/system/Modules/CMP/Config/Blog
+BranchID: "875e0f89-f23b-476b-9bf9-e991a107f693"
+SharedFields:
+- ID: "3f883dcb-c341-4929-9216-d07f4f1b00be"
+  Hint: Bucket
+  Value: |
+    <ruleset>
+      <rule
+        uid="{FA2870E5-0353-438B-A79B-4D19FF619DA1}"
+        name="Contoso Site Rule">
+        <conditions>
+          <condition
+            id="{8236B26D-697D-4888-946D-65427B958135}"
+            uid="F821521014F64D7F8991D90160E7C84A"
+            Relationname="SitecoreSite"
+            Fieldname="TaxonomyName"
+            operatorid="{10537C58-1684-4CAB-B4C0-40C10907CE31}"
+            Value="Contoso" />
+        </conditions>
+        <actions>
+          <action
+            id="{A7345A75-DFFD-4C3B-A751-F747B4A10F52}"
+            uid="0579E176EDBD4C71B230CAA997BE419E"
+            Folderid="{1A3B8AC4-BE11-49B1-B66F-B2CA4D40289C}" />
+        </actions>
+      </rule>
+      <rule
+        uid="{2E4FB762-57CA-4FCD-B097-33CE0FFFF41A}"
+        name="Sample Site Rule">
+        <conditions>
+          <condition
+            id="{8236B26D-697D-4888-946D-65427B958135}"
+            uid="6DF53D19D72D4F48880B769E99AC7EB9"
+            Relationname="SitecoreSite"
+            Fieldname="TaxonomyName"
+            operatorid="{10537C58-1684-4CAB-B4C0-40C10907CE31}"
+            Value="SampleSite" />
+        </conditions>
+        <actions>
+          <action
+            id="{A7345A75-DFFD-4C3B-A751-F747B4A10F52}"
+            uid="9A1BA7E9D2F54AE1B7CCE63DB6878A4F"
+            Folderid="{1E6F70E3-898E-41C6-8C6E-2E2CE492E465}" />
+        </actions>
+      </rule>
+    </ruleset>
+- ID: "9e009c2f-ad3c-4108-aa48-15689c1d4e1b"
+  Hint: Content Type Id
+  Value: M.ContentType.Blog
+- ID: "e9c95e69-0d3d-4ae3-b893-d1ff4ba36b03"
+  Hint: Template
+  Value: |
+    <ruleset>
+      <rule
+        uid="{749AC31F-8017-4681-9C30-B1CDCE59BCEB}"
+        name="Contoso Site Rule">
+        <conditions>
+          <condition
+            id="{8236B26D-697D-4888-946D-65427B958135}"
+            uid="02BBB2E8FE1644039DC1997D81BB5936"
+            Relationname="SitecoreSite"
+            Fieldname="TaxonomyName"
+            operatorid="{10537C58-1684-4CAB-B4C0-40C10907CE31}"
+            Value="Contoso" />
+        </conditions>
+        <actions>
+          <action
+            id="{44A9FE6F-77C9-4C2D-9AE8-0776AC087311}"
+            uid="2BDCE38AB70741E284A4071C081593FC"
+            Templateid="{EFF5A1B0-A3A6-406F-B8DE-9E7A313FAB5E}" />
+        </actions>
+      </rule>
+      <rule
+        uid="{587CD288-8782-4079-A6F1-C98803FBA6E7}"
+        name="Sample Site Rule">
+        <conditions>
+          <condition
+            id="{8236B26D-697D-4888-946D-65427B958135}"
+            uid="257E0BE44EF64E929045BEE781F39292"
+            Relationname="SitecoreSite"
+            Fieldname="TaxonomyName"
+            operatorid="{10537C58-1684-4CAB-B4C0-40C10907CE31}"
+            Value="SampleSite" />
+        </conditions>
+        <actions>
+          <action
+            id="{44A9FE6F-77C9-4C2D-9AE8-0776AC087311}"
+            uid="27581A07F7F5464691D746796B21ABB0"
+            Templateid="{EFF5A1B0-A3A6-406F-B8DE-9E7A313FAB5E}" />
+        </actions>
+      </rule>
+    </ruleset>
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{74999BBB-92D6-4485-8168-3B32790768FC}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210208T210313Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5701fc96-70bc-4ad1-b6c1-3e3ec86cd4de"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210222T141608Z
