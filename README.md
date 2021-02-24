@@ -1,2 +1,4 @@
 # Custom Sitecore ContentHub Connector
-It is a customized version of Sitecore CMP connector
+
+
+To try out this custom connector - you must first install Sitecore Connect™ for Sitecore CMP 
